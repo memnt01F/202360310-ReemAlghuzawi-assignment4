@@ -107,6 +107,12 @@ http://localhost:8000
 
 ---
 
+## Live Demo
+
+You can view the deployed application here:
+
+https://memnt01f.github.io/202360310-ReemAlghuzawi-assignment4/
+
 ## Performance Optimization
 
 The following improvements were implemented:
