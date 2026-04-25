@@ -111,7 +111,7 @@ http://localhost:8000
 
 You can view the deployed application here:
 
-https://memnt01f.github.io/202360310-ReemAlghuzawi-assignment4/
+https://memnt01f.github.io/202360310-ReemAlghuzawi-assignment4/?v=4
 
 ## Performance Optimization
 
