@@ -50,6 +50,18 @@ body {
   line-height: 1.6;
 }
 
+/* ---------- Scroll Progress Bar ---------- */
+#progressBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent), #7c9bff);
+  z-index: 9999;
+  transition: width 0.1s ease;
+}
+
 /* ---------- Layout ---------- */
 .container {
   width: min(1000px, 92%);
@@ -298,10 +310,7 @@ label {
 
 /* ---------- Responsive ---------- */
 @media (max-width: 850px) {
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-
+  .projects-grid,
   .repo-grid {
     grid-template-columns: 1fr;
   }
