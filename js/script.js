@@ -23,34 +23,6 @@ if (themeToggleBtn) {
 }
 
 
-// ================= VISITOR NAME STATE =================
-
-const visitorNameInput = document.getElementById("visitorName");
-const saveNameBtn = document.getElementById("saveNameBtn");
-const greetingMessage = document.getElementById("greetingMessage");
-
-const savedVisitorName = localStorage.getItem("visitorName");
-
-if (savedVisitorName && greetingMessage) {
-    greetingMessage.textContent = `Welcome back, ${savedVisitorName}!`;
-    if (visitorNameInput) {
-        visitorNameInput.value = savedVisitorName;
-    }
-}
-
-if (saveNameBtn) {
-    saveNameBtn.addEventListener("click", () => {
-        const name = visitorNameInput.value.trim();
-
-        if (name === "") {
-            greetingMessage.textContent = "Please enter your name first.";
-            return;
-        }
-
-        localStorage.setItem("visitorName", name);
-        greetingMessage.textContent = `Welcome, ${name}!`;
-    });
-}
 
 
 // ================= CONTACT FORM VALIDATION =================
