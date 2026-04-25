@@ -1,1 +1,363 @@
+/* ---------- Base / Theme ---------- */
+:root {
+  --bg: #0b1020;
+  --card: rgba(255, 255, 255, 0.06);
+  --border: rgba(255, 255, 255, 0.14);
+  --text: #f2f5ff;
+  --muted: rgba(242, 245, 255, 0.75);
+  --accent: #5b7cfa;
+  --shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
 
+body.dark {
+  --bg: #0b1020;
+  --card: rgba(255, 255, 255, 0.06);
+  --border: rgba(255, 255, 255, 0.14);
+  --text: #f2f5ff;
+  --muted: rgba(242, 245, 255, 0.75);
+  --accent: #5b7cfa;
+  --shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+body:not(.dark) {
+  --bg: #f6f7fb;
+  --card: #ffffff;
+  --border: #e6e8f2;
+  --text: #101325;
+  --muted: #4b516e;
+  --accent: #2f66ff;
+  --shadow: 0 16px 40px rgba(16, 19, 37, 0.12);
+}
+
+/* ---------- Global Reset ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background:
+    radial-gradient(1200px 600px at 20% 0%, rgba(91, 124, 250, 0.25), transparent 60%),
+    radial-gradient(900px 500px at 90% 10%, rgba(91, 124, 250, 0.18), transparent 55%),
+    var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ---------- Layout ---------- */
+.container {
+  width: min(1000px, 92%);
+  margin: 0 auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(10px);
+  background: color-mix(in oklab, var(--bg) 85%, transparent);
+  border-bottom: 1px solid var(--border);
+  z-index: 10;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0;
+  gap: 14px;
+}
+
+.brand {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 2px;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 650;
+}
+
+.nav-link:hover {
+  color: var(--text);
+}
+
+/* ---------- Sections ---------- */
+main {
+  padding: 26px 0 60px;
+}
+
+section {
+  margin-top: 34px;
+  padding: 22px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+p {
+  color: var(--muted);
+}
+
+#about p {
+  max-width: 700px;
+  font-size: 15.5px;
+}
+
+/* ---------- Visitor Section ---------- */
+#visitor {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#greetingMessage {
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* ---------- Buttons ---------- */
+button {
+  margin-top: 6px;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--accent), #7c9bff);
+  color: white;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.35);
+  opacity: 0.95;
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* ---------- Projects ---------- */
+.project-controls {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.project-card {
+  padding-bottom: 12px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-text {
+  padding: 14px;
+}
+
+.project-card h3 {
+  color: var(--text);
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.project-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---------- Fade Animation ---------- */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.6s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* ---------- GitHub Repositories ---------- */
+.repo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.repo-card {
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: color-mix(in oklab, var(--card) 92%, transparent);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+}
+
+.repo-card h3 {
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.repo-card p {
+  margin-bottom: 10px;
+}
+
+.repo-card a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.repo-card a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Forms ---------- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+  max-width: 520px;
+}
+
+input,
+textarea,
+select {
+  padding: 11px 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: color-mix(in oklab, var(--card) 85%, transparent);
+  color: var(--text);
+  outline: none;
+}
+
+label {
+  font-weight: 600;
+  color: var(--text);
+}
+
+#formMessage,
+#loadingMessage,
+#noResultsMessage,
+#repoLoadingMessage,
+#repoErrorMessage {
+  margin-top: 10px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+/* ---------- Utility ---------- */
+.hidden {
+  display: none;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 850px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .repo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-controls {
+    flex-direction: column;
+  }
+
+  section {
+    padding: 18px;
+  }
+
+  .nav {
+    align-items: flex-start;
+  }
+}
+
+/* ---------- Toggle Switch ---------- */
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+}
+
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #ccc;
+  border-radius: 50px;
+  transition: 0.3s;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.theme-switch input:checked + .slider {
+  background-color: var(--accent);
+}
+
+.theme-switch input:checked + .slider::before {
+  transform: translateX(24px);
+}
