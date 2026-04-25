@@ -1,1 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <title>Reem Alghuzawi | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!-- Scroll Progress Bar -->
+    <div id="progressBar"></div>
+
+    <!-- ================= HEADER / NAVIGATION ================= -->
+    <header class="site-header">
+        <nav class="container nav">
+
+            <div>
+                <h1 class="brand">Reem Alghuzawi</h1>
+                <p class="subtitle">Personal Portfolio (Assignment 4)</p>
+            </div>
+
+            <div class="nav-actions">
+                <a class="nav-link" href="#about">About</a>
+                <a class="nav-link" href="#projects">Projects</a>
+                <a class="nav-link" href="#github">GitHub</a>
+                <a class="nav-link" href="#contact">Contact</a>
+
+                <label class="theme-switch">
+                    <input type="checkbox" id="themeToggle">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+        </nav>
+    </header>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="container">
+
+        <!-- ---------- ABOUT SECTION ---------- -->
+        <section id="about">
+            <h2>About Me</h2>
+
+            <p>
+                A Software Engineering student with a strong interest in building structured, efficient,
+                and user-focused systems. I enjoy problem-solving, working with data, and developing
+                practical solutions that improve workflows and organization. I’m constantly learning
+                and aiming to strengthen both my technical and collaborative skills.
+            </p>
+        </section>
+
+        <!-- ---------- VISITOR SECTION ---------- -->
+        <section id="visitor">
+            <h2>Welcome</h2>
+
+            <p id="greetingMessage">Welcome to my portfolio.</p>
+
+            <label for="visitorName">Enter your name</label>
+            <input
+                type="text"
+                id="visitorName"
+                name="visitorName"
+                placeholder="Your name"
+            >
+
+            <button type="button" id="saveNameBtn">Save Name</button>
+        </section>
+
+        <!-- ---------- PROJECTS SECTION ---------- -->
+        <section id="projects">
+            <h2>Projects</h2>
+
+            <div class="project-controls">
+                <select id="categoryFilter">
+                    <option value="all">All Projects</option>
+                    <option value="web">Web</option>
+                    <option value="academic">Academic</option>
+                </select>
+
+                <select id="sortProjects">
+                    <option value="default">Default Order</option>
+                    <option value="az">A–Z</option>
+                    <option value="za">Z–A</option>
+                </select>
+            </div>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search projects..."
+            >
+
+            <div class="projects-grid">
+
+                <div class="project-card fade-in" data-category="web">
+                    <div class="project-text">
+                        <h3>Personal Portfolio Website</h3>
+                        <p>
+                            A responsive portfolio website built with HTML, CSS, and JavaScript.
+                        </p>
+                    </div>
+
+                    <img
+                        src="assets/images/portfolio-project.png"
+                        alt="Portfolio Website Project Image"
+                    >
+                </div>
+
+                <div class="project-card fade-in" data-category="academic">
+                    <div class="project-text">
+                        <h3>Web Midterm Scheduling System</h3>
+                        <p>
+                            A structured web-based system designed to organize and manage
+                            midterm exam scheduling efficiently using clean UI and workflow logic.
+                        </p>
+                    </div>
+
+                    <img
+                        src="assets/images/scheduling-project.png"
+                        alt="Scheduling System Project"
+                    >
+                </div>
+
+            </div>
+
+            <p id="loadingMessage" class="hidden">Searching...</p>
+            <p id="noResultsMessage" class="hidden">No projects found</p>
+        </section>
+
+        <!-- ---------- GITHUB REPOSITORIES SECTION ---------- -->
+        <section id="github">
+            <h2>GitHub Repositories</h2>
+
+            <p id="repoLoadingMessage">Loading repositories...</p>
+            <p id="repoErrorMessage" class="hidden">Unable to load repositories right now.</p>
+
+            <div id="repoList" class="repo-grid"></div>
+        </section>
+
+        <!-- ---------- CONTACT SECTION ---------- -->
+        <section id="contact">
+            <h2>Contact</h2>
+
+            <form id="contactForm">
+
+                <label for="name">Name</label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Name"
+                    required
+                >
+
+                <label for="email">Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Email"
+                    required
+                >
+
+                <label for="message">Message</label>
+                <textarea
+                    id="message"
+                    name="message"
+                    placeholder="Message"
+                    required
+                ></textarea>
+
+                <button type="submit">Send</button>
+            </form>
+
+            <p id="formMessage"></p>
+        </section>
+
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
